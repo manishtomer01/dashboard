@@ -1,0 +1,48 @@
+node_modules
+
+
+const fs = require('fs');
+const path = require('path');
+
+const directories = [
+  'config',
+  'controllers',
+  'models',
+  'routes',
+  'middleware',
+  'services',
+  'utils',
+  'public',
+];
+
+
+// Create subdirectories
+directories.forEach((directory) => {
+  fs.mkdirSync(path.join(projectDirectory, directory));
+});
+
+// Create files
+const files = [
+  'app.js',
+  'server.js',
+  '.env',
+  '.gitignore',
+  'package.json',
+  'package-lock.json',
+  'README.md',
+];
+
+files.forEach((file) => {
+  fs.writeFileSync(path.join(projectDirectory, file), '');
+});
+
+// Create config files
+const configFiles = ['db.js', 'env.js'];
+
+configFiles.forEach((configFile) => {
+  fs.writeFileSync(path.join(projectDirectory, 'config', configFile), '');
+});
+
+// Display the created directory structure
+console.log('Directory structure created:');
+console.log(fs.readdirSync(projectDirectory, { withFileTypes: true }).map((entry) => entry.name));
