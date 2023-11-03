@@ -73,5 +73,12 @@
         "phone": "9876543211",
         "role": "User",
         "isActive": true
+    },
+    {
+        "name": "Arun",
+        "city": "Paris",
+        "phone": "9896443211",
+        "role": "User",
+        "isActive": true
     }
 ]
